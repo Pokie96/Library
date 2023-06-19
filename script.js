@@ -1,8 +1,11 @@
 let myLibrary = ['Book1', 'Book2', 'Book3'];
 let body = document.querySelector('body');
 
-function Book(){
-
+function Book(author, title, numberOfPages, isRead){
+    this.author = author
+    this.title = title
+    this.numberOfPages = numberOfPages
+    this.isRead = isRead
 };
 
 function addBookToLibrary(){
