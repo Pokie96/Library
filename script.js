@@ -15,9 +15,12 @@ function addBookToLibrary(){
 function createBookElements(){
     for(eachBook in myLibrary){
         let newDiv = document.createElement('div');
+        newDiv.className = 'bookCards'
         let title = document.createElement('h2');
         title.innerText = myLibrary[eachBook];
         newDiv.appendChild(title);
         body.appendChild(newDiv);
     };
 };
+
+createBookElements();
