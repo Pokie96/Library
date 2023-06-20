@@ -38,6 +38,7 @@ button{
 }
 
 form{
+    visibility: hidden;
     width: 410px;
     height: 500px;
     position: absolute;
