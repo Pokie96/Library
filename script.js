@@ -34,6 +34,14 @@ function createBookElements(){
 
 const bookOne = new Book('Tolkien', 'Lord of the rings', 500, true);
 const bookTwo = new Book('JK Rowling', 'Harry Potter', 670, false);
+const bookThree = new Book('JK Rowling', 'Harry Potter', 670, false);
+const bookFour = new Book('JK Rowling', 'Harry Potter', 670, false);
+const bookFive = new Book('JK Rowling', 'Harry Potter', 670, false);
+const bookSix = new Book('JK Rowling', 'Harry Potter', 670, false);
 addBookToLibrary(bookOne);
-addBookToLibrary(bookTwo)
+addBookToLibrary(bookTwo);
+addBookToLibrary(bookThree);
+addBookToLibrary(bookFour);
+addBookToLibrary(bookFive);
+addBookToLibrary(bookSix);
 createBookElements();
