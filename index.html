@@ -15,23 +15,23 @@
     <form action="index.html" method="get" class="form" autocomplete="on">
         <div class="input-wrapper">
             <label for="bookTitle">Book Title:</label>
-            <input type="text" id="bookTitle" name="bookTitle" required>
+            <input type="text" id="bookTitle" name="bookTitle">
         </div>
         <div class="input-wrapper">
             <label for="authorName">Author's Name:</label>
-            <input type="text" id="authorName" name="authorName" required>
+            <input type="text" id="authorName" name="authorName">
         </div>
         <div class="input-wrapper">
             <label for="numberOfPages">Number of Pages:</label>
-            <input type="number" name="numberOfPages" id="numberOfPages" required>
+            <input type="number" name="numberOfPages" id="numberOfPages">
         </div>
         <div class="input-wrapper">
             <label for="hasBeenRead">Previously Read?:</label>
             <input type="checkbox" name="checkbox" id="checkbox">
         </div>
         <div class="form-buttons-wrapper">
-            <button type="submit" class="formButton">Submit Book</button>
-            <button class="formButton">Cancel</button>
+            <button type="submit" class="formButton" id="submitButton">Submit Book</button>
+            <button class="formButton" id="cancelButton">Cancel</button>
         </div>
     </form>
     <div class="bookCardContainer"></div>

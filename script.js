@@ -46,7 +46,9 @@ openFormButn.addEventListener('click', () => {
     bookForm.style.visibility = 'visible';
 })
 
-
+document.querySelector('#cancelButton').addEventListener('click', () => {
+    bookForm.style.visibility = 'hidden';
+})
 
 const bookOne = new Book('Tolkien', 'Lord of the rings', 500, true);
 const bookTwo = new Book('JK Rowling', 'Harry Potter', 670, false);
