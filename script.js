@@ -1,9 +1,7 @@
 // Global variables required throughout the program.
 let myLibrary = [];
 let container = document.querySelector('.bookCardContainer');
-let openFormButn = document.querySelector('.headerButton');
 let bookForm = document.querySelector('.form');
-
 
 // The book constructor which will be used to create my book objects.
 function Book(author, title, numberOfPages, isRead){
@@ -42,15 +40,35 @@ function createBookElements(){
 
 // This is the event listener for the 'Add Book' button which opens 
 // the form for the book data.
-openFormButn.addEventListener('click', () => {
+document.querySelector('.headerButton').addEventListener('click', () => {
     bookForm.style.visibility = 'visible';
 })
 
+// This is the event listener for the form's cancel button to close 
+// reset the values in the form
 document.querySelector('#cancelButton').addEventListener('click', () => {
     bookForm.style.visibility = 'hidden';
 })
 
-const bookOne = new Book('Tolkien', 'Lord of the rings', 500, true);
+document.querySelector('#submitButton').addEventListener('click', () => {
+    let title = document.querySelector('#bookTitle').value;
+    let author = document.querySelector('#authorName').value;
+    let pageCount = document.querySelector('#numberOfPages').value;
+    let checked = document.querySelector('#checkbox').value;
+    let beenRead;
+    if(checked === 'on'){
+        beenRead = true;
+    } else{
+        beenRead = false;
+    }
+    console.log(title, author, pageCount, checked, beenRead)
+
+    let newBook = new Book(author, title, pageCount, beenRead);
+    addBookToLibrary(newBook);
+    createBookElements();
+})
+
+/*const bookOne = new Book('Tolkien', 'Lord of the rings', 500, true);
 const bookTwo = new Book('JK Rowling', 'Harry Potter', 670, false);
 const bookThree = new Book('JK Rowling', 'Harry Potter', 670, false);
 const bookFour = new Book('JK Rowling', 'Harry Potter', 670, false);
@@ -62,5 +80,5 @@ addBookToLibrary(bookThree);
 addBookToLibrary(bookFour);
 addBookToLibrary(bookFive);
 addBookToLibrary(bookSix);
-createBookElements();
+createBookElements(); */
 

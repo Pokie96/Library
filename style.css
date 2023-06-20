@@ -69,14 +69,22 @@ form{
 
 .input-wrapper input[type='text']{
     background-color: #bbe4e9;
-    height: 30px;
+    color: #5585b5;
+    height: 35px;
+    width: 180px;
     border-radius: 10px;
+    font-size: 24px;
+    padding: 5px;
 }
 
 .input-wrapper input[type='number']{
     background-color: #bbe4e9;
-    height: 30px;
+    color: #5585b5;
+    height: 35px;
+    width: 180px;
     border-radius: 10px;
+    font-size: 24px;
+    padding: 5px;
 }
 
 .input-wrapper input[type='checkbox']{
