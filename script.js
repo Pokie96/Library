@@ -47,6 +47,10 @@ document.querySelector('.headerButton').addEventListener('click', () => {
 // reset the values in the form
 document.querySelector('#cancelButton').addEventListener('click', () => {
     bookForm.style.visibility = 'hidden';
+    document.querySelector('#bookTitle').value = '';
+    document.querySelector('#authorName').value = '';
+    document.querySelector('#numberOfPages').value = '';
+    document.querySelector('#checkbox').checked = false;
 })
 
 document.querySelector('#submitButton').addEventListener('click', () => {
