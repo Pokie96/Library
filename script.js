@@ -2,7 +2,6 @@
 let myLibrary = [];
 let container = document.querySelector('.bookCardContainer');
 let bookForm = document.querySelector('.form');
-let iterator = 0;
 
 // The book constructor which will be used to create my book objects.
 function Book(author, title, numberOfPages, isRead){
@@ -28,33 +27,59 @@ function appendChildren(parentElement, ...args){
 // This is the function which will create the book cards to display
 // the book information from the myLibrary array.
 function createBookElements(){
-    let newestBook = myLibrary[(myLibrary.length)-1]
-    let newDiv = document.createElement('div');
-    let title = document.createElement('h2');
-    let author = document.createElement('p');
-    let pageCount = document.createElement('p');
-    let beenRead = document.createElement('p');
-    let deleteButton = document.createElement('button');
-    let changeReadButton = document.createElement('button');
-    changeReadButton.id = `readButton${iterator}`;
-    changeReadButton.className = 'readButtons';
-    changeReadButton.innerText = 'Change Read Status';
-    newDiv.className = 'bookCards';
-    deleteButton.id = `deleteButton${iterator}`;
-    deleteButton.className = 'deleteButtons';
-    deleteButton.innerText = 'X';
-    title.innerText = `Title: ${newestBook.title}`;
-    author.innerText = `Author: ${newestBook.author}`;
-    pageCount.innerText = `Page Count: ${newestBook.numberOfPages}`;
-    beenRead.innerText = `Been Read: ${newestBook.isRead}`;
-    appendChildren(newDiv, deleteButton, title, author, pageCount, beenRead, changeReadButton);
-    container.appendChild(newDiv);
-    document.querySelector(`#deleteButton${iterator}`).addEventListener('click', e =>{
-        console.log(e.target);
-        e.target.parentNode.remove();
-    })
-    iterator++;
+    container.innerHTML = '';
+    for(let i = 0; i < myLibrary.length; i++){
+        let newestBook = myLibrary[i];
+        let newDiv = document.createElement('div')
+        let title = document.createElement('h2');
+        let author = document.createElement('p');
+        let pageCount = document.createElement('p');
+        let beenRead = document.createElement('p');
+        let deleteButton = document.createElement('button');
+        let changeReadButton = document.createElement('button');
+        deleteButton.innerText = 'X';
+        title.innerText = `Title: ${newestBook.title.toUpperCase()}`;
+        author.innerText = `Author: ${newestBook.author.toUpperCase()}`;
+        pageCount.innerText = `Page Count: ${newestBook.numberOfPages}`;
+        beenRead.innerText = `Been Read: ${newestBook.isRead.toString().toUpperCase()}`;
+        beenRead.id = `beenRead${i}`
+        changeReadButton.id = `readButton${i}`;
+        changeReadButton.className = 'readButtons';
+        changeReadButton.innerText = 'Change Read Status';
+        newDiv.className = 'bookCards';
+        deleteButton.id = `deleteButton${i}`;
+        deleteButton.className = 'deleteButtons';
+        appendChildren(newDiv, deleteButton, title, author, pageCount, beenRead, changeReadButton);
+        container.appendChild(newDiv);
+        document.querySelector(`#deleteButton${i}`).addEventListener('click', e =>{
+            removeBook(i);
+            console.log(myLibrary)
+            e.target.parentNode.remove();
+        })
+        document.querySelector(`#readButton${i}`).addEventListener('click', function(){
+            changeReadStatus(i);
+            createBookElements()
+        })
+    } 
 };
+
+// Function which removes the current book object from the array and removes the element for it from 
+// the page.
+function removeBook(index){
+    myLibrary.splice(index, 1);
+    createBookElements();
+}
+
+// This function find which boolean value is currently in the isRead property and changes it to 
+// the opposite value.
+function changeReadStatus(index){
+    if(myLibrary[index].isRead === true){
+        myLibrary[index].isRead = false;
+    } else{
+        myLibrary[index].isRead = true;
+    }
+    console.log(myLibrary[index]);
+}
 
 // This is the event listener for the 'Add Book' button which opens 
 // the form for the book data.
@@ -80,11 +105,10 @@ document.querySelector('#submitButton').addEventListener('click', () => {
     let author = document.querySelector('#authorName').value;
     let pageCount = document.querySelector('#numberOfPages').value;
     let checked = document.querySelector('#checkbox').checked;
-    
-    console.log(title, author, pageCount, checked)
 
     let newBook = new Book(author, title, pageCount, checked);
     addBookToLibrary(newBook);
+    console.log(myLibrary);
     createBookElements();  
 });
 
