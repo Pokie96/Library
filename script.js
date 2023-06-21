@@ -38,8 +38,8 @@ function createBookElements(){
         let deleteButton = document.createElement('button');
         let changeReadButton = document.createElement('button');
         deleteButton.innerText = 'X';
-        title.innerText = `Title: ${newestBook.title.toUpperCase()}`;
-        author.innerText = `Author: ${newestBook.author.toUpperCase()}`;
+        title.innerText = `Title: ${newestBook.title}`;
+        author.innerText = `Author: ${newestBook.author}`;
         pageCount.innerText = `Page Count: ${newestBook.numberOfPages}`;
         beenRead.innerText = `Been Read: ${newestBook.isRead.toString().toUpperCase()}`;
         beenRead.id = `beenRead${i}`
