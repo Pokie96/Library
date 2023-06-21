@@ -108,7 +108,7 @@ form{
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-    grid-auto-rows: 300px;
+    grid-auto-rows: 400px;
     grid-row: 2/3;
     grid-column: 2/3;
     gap: 40px;
@@ -125,6 +125,18 @@ form{
     border-radius: 10px;
     box-shadow: 5px 5px 5px#bbe4e9;
     padding-bottom: 30px;
+}
+
+.readButtons{
+    width: 150px;
+    height: 70px;
+    background-color: #bbe4e9;
+    color: #3c5e80;
+}
+
+.readButtons:active{
+    background-color: #53a8b6;
+    color: #bbe4e9;
 }
 
 .deleteButtons{

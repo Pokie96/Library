@@ -35,6 +35,10 @@ function createBookElements(){
     let pageCount = document.createElement('p');
     let beenRead = document.createElement('p');
     let deleteButton = document.createElement('button');
+    let changeReadButton = document.createElement('button');
+    changeReadButton.id = `readButton${iterator}`;
+    changeReadButton.className = 'readButtons';
+    changeReadButton.innerText = 'Change Read Status';
     newDiv.className = 'bookCards';
     deleteButton.id = `deleteButton${iterator}`;
     deleteButton.className = 'deleteButtons';
@@ -43,7 +47,7 @@ function createBookElements(){
     author.innerText = `Author: ${newestBook.author}`;
     pageCount.innerText = `Page Count: ${newestBook.numberOfPages}`;
     beenRead.innerText = `Been Read: ${newestBook.isRead}`;
-    appendChildren(newDiv, deleteButton, title, author, pageCount, beenRead);
+    appendChildren(newDiv, deleteButton, title, author, pageCount, beenRead, changeReadButton);
     container.appendChild(newDiv);
     document.querySelector(`#deleteButton${iterator}`).addEventListener('click', e =>{
         console.log(e.target);
