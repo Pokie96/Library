@@ -108,7 +108,7 @@ form{
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-    grid-auto-rows: 250px;
+    grid-auto-rows: 300px;
     grid-row: 2/3;
     grid-column: 2/3;
     gap: 40px;
@@ -124,6 +124,19 @@ form{
     background-color: #5585b5;
     border-radius: 10px;
     box-shadow: 5px 5px 5px#bbe4e9;
+    padding-bottom: 30px;
+}
+
+.deleteButtons{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(212, 82, 82);
+    box-shadow: 2px 2px 2px #3c5e80;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    padding-top: 1px;
+    position: relative;
+    left: 120px;
 }
 
 h1{
@@ -132,12 +145,12 @@ h1{
 }
 
 h2{
-    font-size: 26px;
+    font-size: 30px;
     color: #bbe4e9;
     font-weight: normal;
 }
 
 p{
-    font-size: 24px;
+    font-size: 28px;
     color: #bbe4e9;
 }
