@@ -13,6 +13,7 @@ body{
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 100px 1fr;
     background-image: linear-gradient(to bottom right,#53a8b6, #bbe4e9 );
+    background-attachment: fixed;
     height: 100vh;
 }
 
@@ -41,11 +42,11 @@ button{
 form{
     visibility: hidden;
     width: 410px;
-    height: 500px;
+    height: 60%;
     position: absolute;
     left: 0;
     right: 0;
-    top: 20%;
+    top: 25%;
     margin-left: auto; 
     margin-right: auto; 
     background-color: #79c2d0;
