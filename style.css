@@ -10,7 +10,7 @@
 body{
     padding-top: 20px;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: minmax(60px, 0px) 10fr minmax(60px, 0px);
     grid-template-rows: 100px 1fr;
     background-image: linear-gradient(to bottom right,#53a8b6, #bbe4e9 );
     background-attachment: fixed;
@@ -33,6 +33,17 @@ button{
     border-radius: 10px;
     box-shadow: 3px 3px 3px#bbe4e9;
     color: #bbe4e9;
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    width: 260px;
+    justify-content: space-between;
+}
+
+#dlte-btn{
+    background-color: rgb(212, 82, 82)
 }
 
 .formButton{

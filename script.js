@@ -83,7 +83,7 @@ function changeReadStatus(index){
 
 // This is the event listener for the 'Add Book' button which opens 
 // the form for the book data.
-document.querySelector('.headerButton').addEventListener('click', () => {
+document.querySelector('#create-btn').addEventListener('click', () => {
     bookForm.style.visibility = 'visible';
 })
 
