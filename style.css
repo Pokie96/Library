@@ -10,9 +10,10 @@
 body{
     padding-top: 20px;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: minmax(60px, 0px) 10fr minmax(60px, 0px);
     grid-template-rows: 100px 1fr;
     background-image: linear-gradient(to bottom right,#53a8b6, #bbe4e9 );
+    background-attachment: fixed;
     height: 100vh;
 }
 
@@ -34,6 +35,17 @@ button{
     color: #bbe4e9;
 }
 
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    width: 260px;
+    justify-content: space-between;
+}
+
+#dlte-btn{
+    background-color: rgb(212, 82, 82)
+}
+
 .formButton{
     font-size: 20px;
 }
@@ -41,11 +53,11 @@ button{
 form{
     visibility: hidden;
     width: 410px;
-    height: 500px;
+    height: 60%;
     position: absolute;
     left: 0;
     right: 0;
-    top: 20%;
+    top: 25%;
     margin-left: auto; 
     margin-right: auto; 
     background-color: #79c2d0;

@@ -85,8 +85,16 @@ function changeReadStatus(index){
 
 // This is the event listener for the 'Add Book' button which opens 
 // the form for the book data.
-document.querySelector('.headerButton').addEventListener('click', () => {
+document.querySelector('#create-btn').addEventListener('click', () => {
     bookForm.style.visibility = 'visible';
+})
+
+// This is the event listener for the 'Delete All' button which 
+// will remove all objects from our array and refreshes the elements 
+// that are created from our array.
+document.querySelector('#dlte-btn').addEventListener('click', () => {
+    myLibrary = [];
+    createBookElements();
 })
 
 // This is the event listener for the form's cancel button to close 
