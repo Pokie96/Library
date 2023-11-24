@@ -3,13 +3,15 @@ let myLibrary = [];
 let container = document.querySelector('.bookCardContainer');
 let bookForm = document.querySelector('.form');
 
-// The book constructor which will be used to create my book objects.
-function Book(author, title, numberOfPages, isRead){
-    this.author = author
-    this.title = title
-    this.numberOfPages = numberOfPages
-    this.isRead = isRead
-};
+// The book class which will be used to create my book objects.
+class Book {
+    constructor(author, title, numberOfPages, isRead){
+        this.author = author
+        this.title = title
+        this.numberOfPages = numberOfPages
+        this.isRead = isRead
+    }
+}
 
 // Adds the new book object on to the myLibrary array.
 function addBookToLibrary(book){
