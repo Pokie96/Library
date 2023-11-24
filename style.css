@@ -80,6 +80,7 @@ form{
     justify-content: space-between;
     color: #5585b5;
     font-size: 28px;
+    position: relative;
 }
 
 .input-wrapper input[type='text']{
@@ -117,6 +118,14 @@ form{
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.error{
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    bottom: -5px;
+    right: 10px;
 }
 
 .bookCardContainer{

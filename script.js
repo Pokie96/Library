@@ -108,17 +108,38 @@ document.querySelector('#cancelButton').addEventListener('click', () => {
 // The event listener for the form's 'Submit book' button which creates
 // a new book object, appends it to the myLibrary array and creates an
 // element in the DOM for it.
-document.querySelector('#submitButton').addEventListener('click', () => {
-    let title = document.querySelector('#bookTitle').value;
-    let author = document.querySelector('#authorName').value;
-    let pageCount = document.querySelector('#numberOfPages').value;
-    let checked = document.querySelector('#checkbox').checked;
+document.querySelector('#submitButton').addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    let form = document.querySelector('#bookForm');
+    let errors = document.querySelectorAll('.error');
+    let title = document.querySelector('#bookTitle');
+    let titleError = document.querySelector("#titleError");
+    let author = document.querySelector('#authorName');
+    let authorError = document.querySelector('#authorError');
+    let pageCount = document.querySelector('#numberOfPages');
+    let pageCountError = document.querySelector('#pageCountError');
+    let checked = document.querySelector('#checkbox');
 
-    let newBook = new Book(author, title, pageCount, checked);
-    addBookToLibrary(newBook);
-    console.log(myLibrary);
-    createBookElements();  
+    for(error of errors){
+        error.innerText = "";
+    }
+
+    if(form.checkValidity()){
+        let newBook = new Book(author.value, title.value, pageCount.value, checked.checked);
+        addBookToLibrary(newBook);
+        createBookElements();
+    } else{
+        if (!title.checkValidity()){
+            titleError.innerText = "Title is required"; 
+        }
+        if(!author.checkValidity()){
+            authorError.innerText = "Author is required";
+        }
+        if(!pageCount.checkValidity()){
+            pageCountError.innerText = "Page count is required";
+        }
+    }   
 });
-
 
 

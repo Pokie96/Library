@@ -15,18 +15,21 @@
             <button class="headerButton" id="dlte-btn">Delete All</button>
         </div>  
     </header>
-    <form action="index.html" method="get" class="form" autocomplete="off">
+    <form id="bookForm" action="index.html" method="get" class="form" autocomplete="off">
         <div class="input-wrapper">
             <label for="bookTitle">Book Title:</label>
-            <input type="text" id="bookTitle" name="bookTitle">
+            <input type="text" id="bookTitle" name="bookTitle" required>
+            <p class="error" id="titleError"></p>
         </div>
         <div class="input-wrapper">
             <label for="authorName">Author's Name:</label>
-            <input type="text" id="authorName" name="authorName">
+            <input type="text" id="authorName" name="authorName" required>
+            <p class="error" id="authorError"></p>
         </div>
         <div class="input-wrapper">
             <label for="numberOfPages">Number of Pages:</label>
-            <input type="number" name="numberOfPages" id="numberOfPages">
+            <input type="number" name="numberOfPages" id="numberOfPages" required>
+            <p class="error" id="pageCountError"></p>
         </div>
         <div class="input-wrapper">
             <label for="checkbox">Previously Read?:</label>
